@@ -4,13 +4,18 @@ const products = [
     { name: 'Дроид', price: 400, quantity: 7 },
     { name: 'Захват', price: 1200, quantity: 2 },
 ];
-const calculateTotalPrice = function(allProdcuts, productName) {
-    for (const obj of allProdcuts) {
+const calculateTotalPrice = function calculateTotalPrice(
+    allProdcuts,
+    productName,
+) {
+    let result = 0;
+    allProdcuts.forEach(obj => {
         if (obj.name === productName) {
-            let totalPrice = obj.price * obj.quantity;
-            return totalPrice;
+            result = obj.price * obj.quantity;
         }
-    }
+    });
+
+    return result;
 };
 
 /*
